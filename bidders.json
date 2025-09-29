@@ -1,0 +1,22 @@
+{
+    "bidder": [
+        {
+            "name": "Jhemric",
+            "item": "fish bowl",
+            "amount": 100,
+            "time": ""
+        },
+        {
+            "name": "Jhemric2",
+            "item": "fish bowl",
+            "amount": 100,
+            "time": ""
+        },
+        {
+            "name": "Jhemric3",
+            "item": "fish bowl",
+            "amount": 100,
+            "time": ""
+        }
+    ]
+}
