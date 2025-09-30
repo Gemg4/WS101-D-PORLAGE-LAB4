@@ -3,19 +3,55 @@
         {
             "name": "Jhemric",
             "item": "fish bowl",
+            "amount": 90,
+            "time": ""
+        },
+        {
+            "name": "john",
+            "item": "fish bowl",
+            "amount": 110,
+            "time": ""
+        },
+        {
+            "name": "alice",
+            "item": "fish tank",
             "amount": 100,
             "time": ""
         },
         {
-            "name": "Jhemric2",
+            "name": "mike",
             "item": "fish bowl",
-            "amount": 100,
+            "amount": 50,
             "time": ""
         },
         {
-            "name": "Jhemric3",
+            "name": "sarah",
+            "item": "fish food",
+            "amount": 29,
+            "time": ""
+        },
+        {
+            "name": "sophie",
+            "item": "fish tank",
+            "amount": 200,
+            "time": ""
+        },
+        {
+            "name": "kyle",
+            "item": "fish collar",
+            "amount": 80,
+            "time": ""
+        },
+        {
+            "name": "llyod",
+            "item": "fish collar",
+            "amount": 40,
+            "time": ""
+        },
+        {
+            "name": "mia",
             "item": "fish bowl",
-            "amount": 100,
+            "amount": 60,
             "time": ""
         }
     ]
