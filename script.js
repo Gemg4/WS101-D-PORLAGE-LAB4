@@ -5,7 +5,7 @@ function createbidder(bidder) {
     obj.name = bidder.name
     obj.item = bidder.item
     obj.amount = bidder.amount
-    obj.item = new Date().toISOString
+    obj.time = new Date().toISOString
     return obj
 }
 
