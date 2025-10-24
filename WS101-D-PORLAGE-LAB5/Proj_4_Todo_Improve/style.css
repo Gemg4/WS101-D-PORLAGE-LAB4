@@ -1,0 +1,447 @@
+:root {
+    --accent-color: #8A2BE2;
+    --background-color: #fafafa;
+    --surface-color: #ffffff;
+    --text-color: #1e1e2f;
+    --muted-text-color: #6e6b7b;
+
+    --primary-color: #5B21B6;
+    --secondary-color: #C084FC;
+    --highlight-color: #E0B3FF;
+    --danger-color: #E63946;
+    --success-color: #2ECC71;
+    --complement-color: #2BE28A;
+
+    --alternative-color: #fff;
+    --soft-white: #f5f6f7;
+    --soft-shadow: #00000014;
+}
+
+/* Due to lack of time unable to optimize */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--soft-white);
+}
+
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-top: 90px;
+    height: 800px;
+    width: 700px;
+    background-color: var(--alternative-color);
+    /* border: 2px solid var(--primary-color); */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--soft-shadow);
+    touch-action: manipulation;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    background-color: var(--surface-color);
+    padding: 20px;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.todo-title {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.todo-user {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 55px;
+    color: var(--alternative-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    left: 90%;
+}
+
+.user-modal {
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    background-color: var(--background-color);
+    border-color: var(--primary-color);
+    box-shadow: 3px 3px 5px #1e1e2f;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+}
+
+.modal-heading {
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+    border-bottom: solid 2px var(--primary-color);
+    color: var(--primary-color);
+}
+
+.modal-heading h2 {
+    font-size: 2rem;
+}
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.modal-wrapper h3 {
+    color: var(--accent-color);
+}
+
+.recent-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 0 0;
+    list-style: none;
+    height: 250px;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    outline: none;
+}
+
+.recent-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+    background-color: var(--alternative-color);
+    box-shadow: 1px 1px 2px #1e1e2f;
+    font-size: 1.1rem;
+    transition: all 200ms ease-in;
+}
+
+.recent-user p {
+    width: 60%;
+}
+
+.recent-user:hover,
+.add-user button:hover {
+    box-shadow: 2px 2px 5px #1e1e2f;
+}
+.recent-user .user-ctrls {
+    display: flex;
+    gap: 10px;
+}
+
+.add-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.add-user button {
+    font-size: .9rem;
+    border: 1px solid var(--accent-color);
+    background-color: var(--alternative-color);
+    color: var(--primary-color);
+    box-shadow: 1px 1px 2px #1e1e2f;
+    width: 120px;
+    padding: 8px;
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.add-user-modal {
+    margin: auto;
+    background-color: var(--background-color);
+    border-color: var(--primary-color);
+    box-shadow: 3px 3px 5px #1e1e2f;
+    transition: all 300ms ease-in-out;
+}
+
+.add-user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+    padding: 20px 0;
+}
+
+.add-user-form label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    width: 90%;
+    padding: 5px;
+    background-color: var(--accent-color);
+    color: var(--alternative-color);
+    box-shadow: 2px 2px 5px #1e1e2f;
+}
+
+.add-user-form input {
+    font-size: 1rem;
+    padding: 6px;
+    width: 90%;
+}
+
+.add-user-form .user-ctrls {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-user-form .user-ctrls button {
+    width: 100px;
+    padding: 5px;
+}
+
+.user-ctrls button {
+    width: 70px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+}
+
+.todo-add-task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.todo-add-task input {
+    height: 40px;
+    width: 85%;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+}
+
+.todo-add-task input:focus {
+    border: none;
+    outline: solid 2px var(--highlight-color);
+}
+
+.todo-add-task button {
+    height: 40px;
+    width: 20%;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--alternative-color);
+    font-weight: 600;
+}
+
+.display-ctrls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.display-ctrls button {
+    flex: 1;
+    padding: 10px 5px;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* BUTTON PSEUDO */
+.todo-add-task button:hover,
+.display-ctrls button:hover {
+    background-color: var(--primary-color);
+    color: var(--alternative-color);
+}
+
+.todo-add-task button:focus-visible,
+.display-ctrls button:focus-visible {
+    background-color: #892be288;
+    color: var(--alternative-color);
+}
+
+.todo-body {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.todo-task-count {
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    width: 96%;
+}
+
+.todo-task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    width: 96%;
+    height: 520px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+}
+
+.todo-task-list .task {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    border: 1px solid var(--soft-shadow);
+    /* border-radius: 15px; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08),
+        0 8px 6px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    padding: 10px;
+}
+
+.task-user {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-user p {
+    font-size: 1.2rem;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 10px;
+}
+
+.task-meta input[type="checkbox"],
+.task-meta input[type="checkbox"]::before {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    outline: 1px solid var(--primary-color);
+    /* Adds outline around checkbox */
+    outline-offset: -1px;
+    accent-color: var(--primary-color);
+}
+
+.task-meta input[type="text"],
+.task-meta input[type="text"]::before {
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: 1px solid var(--primary-color);
+    /* Adds outline around checkbox */
+    outline-offset: -1px;
+    accent-color: var(--primary-color);
+}
+
+.task-meta span {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.task-ctrls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.task-ctrls button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--surface-color);
+    font-weight: 600;
+}
+
+.task-ctrls button:first-child:hover {
+    background-color: #c4bebe41;
+    color: var(--text-color);
+}
+
+.task-ctrls button[data-btn-action="delete"],
+.user-ctrls button:first-child {
+    background-color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    color: var(--alternative-color);
+}
+
+.task-ctrls button[data-btn-action="delete"]:hover,
+.user-ctrls button:first-child:hover {
+    background-color: #d33341;
+    color: var(--alternative-color);
+}
+
+.task-ctrls button[data-btn-action="save"],
+.user-ctrls button:last-child {
+    background-color: var(--success-color);
+    border: 1px solid var(--success-color);
+    color: var(--alternative-color);
+}
+
+.task-ctrls button[data-btn-action="save"]:hover,
+.user-ctrls button:last-child:hover {
+    background-color: #42b371e1;
+    color: var(--alternative-color);
+}
+
+/* Others */
+button {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.display-ctrls [data-active="true"] {
+    background-color: var(--accent-color);
+    color: var(--alternative-color);
+}
+
+[data-complete=true] span {
+    text-decoration: line-through 2px var(--accent-color);
+}
+
+span.hide {
+    display: none;
+}

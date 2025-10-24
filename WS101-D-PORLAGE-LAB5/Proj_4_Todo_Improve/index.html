@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Lab 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div class="todo-app">
+        <div class="todo-heading">
+            <h1 class="todo-title">My Todo App +1</h1>
+            <div class="todo-user" data-user-ui>
+                <h2 data-username-char>D</h2>
+                <dialog class="user-modal" data-user-modal>
+                    <div class="modal-wrapper">
+                        <div class="modal-heading">
+                            <h2 data-cur-user>darshan</h2>
+                            <p>current user</p>
+                        </div>
+                        <h3>Recent Users</h3>
+                        <ul class="recent-users" data-recent-users></ul>
+                        <div class="add-user">
+                            <button data-user-modal-close>Close</button>
+                            <button data-add-user>Add new user</button>
+                            <dialog data-add-user-modal class="add-user-modal">
+                                <form action="" method="get" class="add-user-form">
+                                    <label for="username">Create New User</label>
+                                    <input type="text" id="username" name="username" placeholder="Enter username..." maxlength="20">
+                                    <div class="user-ctrls">
+                                        <button data-close-modal-btn type="button">Cancel</button>
+                                        <button type="submit">Login</button>
+                                    </div>
+                                </form>
+                            </dialog>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+            <form class="todo-add-task">
+                <input type="text" name="description" placeholder="Add task" required>
+                <input type="date" name="target-date">
+                <button type="submit">Add</button>
+            </form>
+            <div class="display-ctrls" data-display-ctrl>
+                <button data-active="true">All</button>
+                <button data-active="" data-state="active">Active</button>
+                <button data-active="" data-state="completed">Completed</button>
+            </div>
+        </div>
+        <div class="todo-body">
+            <h2 class="todo-task-count" data-count>Remaining task: 1</h2>
+            <ul class="todo-task-list" data-taskContainer data-state="all">
+                <li class="task">
+                    <div class="task-meta">
+                        <input type="checkbox">
+                        <span>First task Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, quae id
+                            tempora dolor ut modi totam saepe ducimus atque sit itaque nisi, similique ad exercitationem
+                            ea consequuntur iusto rem nam!</span>
+                    </div>
+                    <div class="task-ctrls">
+                        <button data-btn-action="edit">Edit</button>
+                        <button data-btn-action="delete">Delete</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
